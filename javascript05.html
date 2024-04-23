@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+<body>
+    <script>
+        function fnc1(){
+            document.write("<br>fnc1 : 매개변수x, 리턴x<br>");
+        }
+        function fnc2(x){
+            document.write("<br>fnc2 : 매개변수o, 리턴x<br>");
+        }
+        function fnc3(){
+            return "<br>fnc3 : 매개변수x, 리턴o<br>";
+        }        
+        function fnc4(x){
+            return "<br>fnc4 : 매개변수o, 리턴o<br>";
+        }   
+        //함수 호출과 사용
+        var res4 = fnc4("강범준");
+        var res3 = fnc3();
+        document.write(res4);
+        document.write(res3);
+        fnc2("강범주");
+        fnc1();
+    </script>
+</body>
+</html>

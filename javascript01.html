@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 01 ES5</title>
+    <!--html각주 / head 태그 사이에 있는 script는 body요소가 로딩 되기 전에 해야 할 일을 기술-->
+    <!--문법은 오기 표시가 나오지만, 오타는 있어도 빨간줄 표시가 나지 않으니 대소문자, 오타 주의-->
+    <script>
+        // 스크립트각주
+        /*
+        스크립트각주
+        */
+    </script>
+</head>
+<body>
+    <h1>자바스크립트(JavaScript) 란?</h1>
+    <p>자바스크립트는 웹의 요소나 브라우저를 제어할 목적으로 만들어진 동적문서를 만드는 프로그래밍 언어</p>
+    <hr>
+    <h2>자바스크립트의 레벨</h2>
+    <p>자바스크립트의 정식 명칭은 EcmaScript이며, ES(EcmaScript)5(level 5, 2009년 이전)와 ES6(2015년 이후)로 명확한 구분점을 가지고 있고, ES5이하는 웹의 요소나 브라우저를 제어할 목적을 갖고 있으며
+        ES6이상은 ES5 이하의 기능을 포함하여 객체 지향적 프로그래밍 기법과 프론트엔드 프레임워크나 Node를 기반으로 VIEW단의 서버 프로그래밍을 할 수 있는 기능이 더 추가되었다. </p>
+        <!--body요소와 그 하부 요소인 h1,p,h2,hr등이 출력되고 난 후 실행해야 하는 내용 기술-->
+        <div id="msg"></div>
+        <hr>
+        <button type="button" onclick="fnc1()">인라인 이벤트 버튼</button><br>
+        <button type="button" id="btn2">이벤트리스너 이벤트 버튼</button><br>
+        <button type="button" id="btn3">메소드 이벤트 버튼</button><br>
+        <script>
+            // 변수 정의 : var 변수명(ES5), let 변수명, const 변수명;
+            // var 변수명 = 초기값;
+            // 정해진 변수타입이 없다. 즉, var로 쓰고 알아서 입력하면 된다.
+            var data;
+            var name_str = "강범준"; // 문자열 변수 str. ';' 써도 되고 안써도 된다.(ES6)
+            var ageNum = 43; // 정수형 변수 ageNum
+            var heightNum = 173.52; // 실수형 변수 heightNum
+            var a=20, b=30;
+            
+            // document == this (현재문서)
+            var msg = document.getElementById("msg"); // DOM (Document Object Model)요소
+            // addEventListener : 이벤트 추가
+            document.getElementById("btn2").addEventListener("click", function(){fnc2();});
+
+
+            // 함수 : 방법1 function 함수명1() {...} / 방법2 var 함수명2 = function(){};
+            // (fun1 => 예전 방식 / fun2 => 요즘 방식)
+            function fnc1() {
+                if(!confirm("함수1을 호출하셨습니다. \n확인 또는 취소를 눌러주세요")) { // confirm : 확인취소 버튼 나오게하는 알림창
+                    msg.innerHTML = "<strong>취소를 누르셨습니다.</strong>";
+                } else {
+                    msg.innerHTML = "<em>확인을 누르셨습니다.</em>";
+                }
+            };
+
+            var fnc2 = function() {alert("함수2를 호출하셨습니다.")}; // alert : 확인만 나타나는 알림창
+            document.getElementById("btn2");
+
+            //배열 : arr[0] = "강범준", arr[1] = "김응원", arr[2]="김필규"....
+            var arr = ["강범준","김응원","김필규","김민아"];
+
+            //객체 : var 객체명 = {속성1:값1, 속성2:값2, .... 메소드1:function(){...} , ...}
+            var obj ={name:"김민식", age:48, height:182.78, method1:function() {
+                var wt = prompt("몸무게를 입력해주세요"); // prompt : 메세지 입력이 가능한 알림창
+                msg.innerText = this.name + "님의 몸무게는" + wt +"kg 입니다."
+            }};
+
+            document.getElementById("btn3").addEventListener("click", function() {obj.method1();});
+        
+        /*
+        메세지 창
+        alert ("메세지") : 확인 만 출력되는 알림창
+        confirm ("메세지") : 확인 취소 버튼이 나와 제어가 가능한 알림창
+        prompt ("메세지") : 메세지 입력이 가능한 알림창 
+        */
+        
+        
+        
+        </script>
+    </body>
+</html>
