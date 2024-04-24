@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트의 내장 객체</title>
+    <style>
+        h4{width:80px; margin:40px;}
+    </style>
+</head>
+<body>
+    <h1>데이터형 객체</h1>
+    <p>자바스크립트의 데이터형 객체는 데이터를 저장하거나 변환, 변형, 전달을 목적으로 반든 내장 객체를 의미하며, 그 데이터가 어떠한 타입의 데이터냐에 따라서 사용하는 객체가 다르다.</p>
+    <p>Number, Math, Date, String, Array, Audio, Video, File, ... 등이 있고 정적 객체(Static => 생성자 없이 바로 쓸수 있는.)도 있으며, 동적 객체(new 키워드로 생성)와 혼합형태도 있다. </p>
+    <hr>
+    <script>
+        document.write("<h4> var x = 456789.1234; \nvar y = 12345.6789; \nvar z = 0x2C;&nbsp;&nbsp; \nvar a = 0b1011110; \nvar b = 0o4512;</h4>");
+        var x = 456789.1234;
+        var y = 12345.6789;
+        var z = 0x2C; // 16진수
+        var a = 0b1011110; // 2진수
+        var b = 0o4512; // 8진수. 0뒤에 o를 붙여줘야 한다.(java와 차이점.)
+
+        // Number 객체 관련 메서드
+        document.write("<h3>2진수로 변환</h3>")
+        document.write("<p>x : " + x.toString(2) + "</p>") // 문자는 동적, 정적 생각할거없이 직접 입력하면 된다. => toString(2) : 2진수로 변환
+        document.write("<p>y : " + y.toString(2) + "</p>")
+        document.write("<p>z : " + z.toString(2) + "</p>")
+        document.write("<h3>8진수로 변환</h3>")
+        document.write("<p>x : " + x.toString(2) + "</p>")
+        document.write("<p>y : " + y.toString(2) + "</p>")
+        document.write("<p>z : " + z.toString(2) + "</p>")
+        document.write("<h3>16진수로 변환</h3>")
+        document.write("<p>x : " + x.toString(2) + "</p>")
+        document.write("<p>y : " + y.toString(2) + "</p>")
+        document.write("<p>z : " + z.toString(2) + "</p>")
+
+        var a = "kim";
+        var b = "1234";
+        var c = 0;
+        var d = 50;
+        var e;
+        var f = "12.54";
+        var o = "12.34";
+        var k = "13 + 15 / 20 + d";
+
+        document.write("<h3>Number.메서드()형태의 정적 메서드 : true / false / type</h3>")
+        document.write("<p>b / d : " + (b/d) + " : " + Number.isInteger(b/d) + "</p>"); 
+        document.write("<p> 매개변수의 값이 정수면 true를, 아니면 false를 반환합니다. 값이 NaN이거나 Infinity여도 false를 반환합니다.</p>");
+        document.write("<p>a / d : " + (a/d) + " : " + Number.isNaN(a/d) + "</p>"); // isNaN :  isN (isNot) aN (a Number) => 숫자가 아니라면.
+        document.write("<p>c / d : " + (c/d )+ "</p>");
+        document.write("<p>d / c : " + (d/c) + " : " + Number.isFinite(d/c) + "</p>"); // infinity
+        document.write("<p>e / d : " + (e/d) + " : " + isNaN(e/d) + "</p>");
+        g = Number.parseInt(b);
+        document.write("<p>" + (typeof b) + ", b숫자로 변환" + g + " : " + (typeof g) + "</p>");
+        h = Number.parseFloat(f);
+        document.write("<p>" + (typeof f) + ", f숫자로 변환" + h + " : " + (typeof h) + "</p>");
+        i = Number(f);
+        document.write("<p>" + (typeof f) + ", f숫자로 변환" + i + " : " + (typeof i) + "</p>");
+        j = eval(f);
+        document.write("<p>" + (typeof f) + ", f숫자로 변환" + j + " : " + (typeof j) + "</p>");
+        l = Number(k);
+        document.write("<p>" + (typeof k) + ", k 변환" + l + " : " + (typeof l) + "</p>");
+        m = eval(k);
+        document.write("<p>" + (typeof k) + ", k 변환" + m + " : " + (typeof m) + "</p>");
+        
+        // Math 객체 관련 메서드 - 반드시 앞에 Math가 붙어야 함.
+        var arr1 = [20, 80, 90, 70, 100, 10, 15];
+        document.write("<h3>Math 객체 관련 메서드</h3>")
+        document.write("<p> 최소값 : " +Math.min(20,80,90,70,100,10,15) + "</p>");
+        document.write("<p> 최대값 : " +Math.max(20,80,90,70,100,10,15) + "</p>");
+        document.write("<p>임의의 수 : " +Math.random() + "</p>");
+        var n = Number(f);
+        var p = Number(o);
+        document.write("<p> 반올림1 : " +Math.round(n)) + "</p>";
+        document.write("<p> 반올림2 : " +Math.round(p)) + "</p>";
+        document.write("<p> 올림1 : " +Math.ceil(n)) + "</p>";
+        document.write("<p> 올림2 : " +Math.ceil(p)) + "</p>";
+        document.write("<p> 내림1 : " +Math.floor(n)) + "</p>";
+        document.write("<p> 내림2 : " +Math.floor(p)) + "</p>";
+        document.write("<p> sin 30도 : " +Math.sin(30)) + "</p>";
+        document.write("<p> cos 30도 : " +Math.cos(30)) + "</p>";
+        document.write("<p> tan 30도 : " +Math.tan(30)) + "</p>";
+        document.write("<p> -236의 절대값 : " +Math.abs(-236)) + "</p>";
+        document.write("<p> 루트(제곱근) 81의 값 : " +Math.sqrt(81)) + "</p>";
+        document.write("<p> 81의 세제곱근의 값 : " +Math.cbrt(81)) + "</p>";
+        document.write("<p> 9의 4승 값 : " +Math.pow(9, 4)) + "</p>";
+
+        date1 = new Date(); // 오늘 날짜
+        document.write("<h3>Date 객체 관련 메서드</h3>");
+        document.write("<p>오늘 날짜 : " + date1 + " 객체 관련 메서드</p>");
+        document.write("<p>연도 : " + date1.getFullYear() + "<p>");
+        document.write("<p>월 : " + (date1.getMonth()+1) + "<p>"); // 0~11(총 12달)
+        w = ["일","월","화","수","목","금","토"];
+        document.write("<p>요일번호 : " + (date1.getDay()) + "/ 요일 : " + w[date1.getDay()] + "</p>"); // 0~6(총 7일)
+        document.write("<p>일 : " + (date1.getDate()) + "<p>");
+        document.write("<p>시 : " + (date1.getHours()) + "<p>");
+        document.write("<p>분 : " + (date1.getMinutes()) + "<p>");
+        document.write("<p>초 : " + (date1.getSeconds()) + "<p>");    
+    </script>
+        <h2>타이머 객체(원래는 없는 일종의 함수)</h2>
+        <div id="cal"></div>
+        <div id="clock"></div>
+        <div id="status"></div>
+        <button type="button" id="btn1">멈춤</button>
+        <script>
+            //타이머 객체
+            function abc() {
+                date2 = new Date();
+                var today = ""+date2.getFullYear() + "-" + (date2.getMonth()+1) + (date2.getDay());
+                var now = "" + date2.getHours()+":"+date2.getMinutes()+":"+date2.getSeconds();
+                var cal = document.getElementById("cal");
+                var clock = document.getElementById("clock");
+                cal.innerHTML = "<p>오늘날짜 : " + today + "</p>";
+                clock.innerHTML = "<p>현재 시각 : " + now + "</p>";
+            }
+            var intv = setInterval(function(){ abc();}, 1000);
+            var btn1 = document.getElementById("btn1");
+            var sw = true;
+            btn1.addEventListener("click", function() {
+                if(sw) { // 스위칭 기법
+                    clearInterval(intv);
+                    btn1.innerText = "출발";
+                }else {
+                    intv = setInterval(function(){ abc();}, 1000);
+                    btn1.innerText= "멈춤";
+                }
+                sw = !sw;
+            });
+            function bcd() {
+                document.getElementById("status").innerHTML = "타임아웃";
+            }
+            setTimeout(function(){ bcd(); }, 2000);
+        </script>
+</body>
+</html>
