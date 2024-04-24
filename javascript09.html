@@ -40,5 +40,18 @@
             window.print(); // 인쇄창 열기
         });
         </script>
+        <script>
+            var childWindow; // 자식창을 저장하기 위한 변수
+            var aName = "";
+            function openChild() {
+                aName = document.getElementById("aName").value;
+                var windowFeatures = "width=500, height=300, top=200, left=200, popup"; // 팝업
+                childWindow = window.open("child1.html?data=" + aName, "myPopup", windowFeatures);
+            }
+            function setChildText() {
+                var aValue = document.getElementById("aName").value;
+                childWindow.document.getElementById("childName").value = aValue; // 저장된
+            }
+        </script>
 </body>
 </html>

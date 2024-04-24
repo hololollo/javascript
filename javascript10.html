@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자식창</title>
+</head>
+<body>
+    <form name="childFrmName">
+        <input type="text" id="childName" name="childName"><br><br>
+        <input type="button" value="부모창 값 가져오기" onclick="readParentText()">&nbsp;
+        <input type="button" value="창 닫기" onclick="window.close()">
+    </form>
+    <script>
+        var aValue = opener.document.getElementById("aName").value;
+        function readParentText() { //opener - 부모창
+            aValue = opner.document.getElementById("aName").value; // 부모창 접근 : opner
+            document.getElementById("childName").value = aValue;
+            //alert("부모의 aName의 값은:" + aValue);
+        }
+    </script>
+</body>
+</html>
