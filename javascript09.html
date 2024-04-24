@@ -23,6 +23,7 @@
         </div>
         <script>
             var btn2 = document.getElementById("btn2");
+            var btn3 = document.getElementById("btn3");
             var win1;
             function open1(url) {
             // var data = href1.data;
@@ -33,7 +34,10 @@
             var win1 = window.open(url, "win1", win_option); // 새창으로 열기(주소, 창 이름, [옵션])
         }
         btn2.addEventListener("click", function() {
-        win1.close();
+            self.close();
+        });
+        btn3.addEventListener("click", function() {
+            window.print(); // 인쇄창 열기
         });
         </script>
 </body>
