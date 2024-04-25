@@ -3,21 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자식창</title>
+    <title>BOM 객체의 속성과 메소드</title>
 </head>
 <body>
-    <form name="childFrmName">
-        <input type="text" id="childName" name="childName"><br><br>
-        <input type="button" value="부모창 값 가져오기" onclick="readParentText()">&nbsp;
-        <input type="button" value="창 닫기" onclick="window.close()">
-    </form>
     <script>
-        var aValue = opener.document.getElementById("aName").value;
-        function readParentText() { //opener - 부모창
-            aValue = opner.document.getElementById("aName").value; // 부모창 접근 : opner
-            document.getElementById("childName").value = aValue;
-            //alert("부모의 aName의 값은:" + aValue);
+        document.write("<h2>window 객체</h2>");
+        for(var key in window){
+            document.write("<p>"+key+":"+window[key]+"</p>");
         }
-    </script>
+        </script>
 </body>
 </html>

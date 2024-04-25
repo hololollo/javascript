@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제1</title>
+    <style>
+        body, html { width:100%; overflow-x: hidden;}
+        .form{display:block;}
+        ul{display:block;}
+        ul li{list-style: none; text-decoration: none; padding:40px; margin-right: 20px; margin-left: 40px;}
+        ul li #width1{float:left;}
+        ul li #height1{float:left;  }
+        ul li #font_size{clear:both; float:left;}
+        ul li #font_bold{ float:left;}
+        ul li #font_color{clear:both;}
+
+        #btn{clear:both; }
+    </style>
+</head>
+<body>
+    <h3>아래 화면과 같은 페이지를 html과 css를 이용하여 작성하고, javascript를 이용하여 '적용하기'버튼 클릭 시 각 input에 작성 및 체크된 값을 적용한 결과물을 아래 그림과 같이 출력해야 한다.
+        작성한 모든 파일을 수강생이름.zip파일로 압축하여 제출하시오.
+    </h3>
+    <form action="form1">
+        <div class="form">
+            <ul>
+                <li id="width1"><strong>너비 :</strong><input type="text" name="width1">px</li>
+                <li id="height1"><strong>높이 :</strong><input type="text" name="height1">px</li>
+                <li id="font_size"><strong>글자크기 :</strong><input type="text" name="font_size">px
+                <li id="font_bold"><strong>굵기 :</strong> 보통<input type="radio"> 굵게<input type="radio"></li>
+                <li id="font_color"><strong>글자색 :</strong><input type="text" name="font_color">px</li>
+                <li id="backcolor"><strong>배경색 :</strong><input type="text" name="backcolor">px</li>
+                <li id="sort_x"><strong>가로정렬 : </strong>왼쪽<input type="radio"> 가운데<input type="radio"> 오른쪽<input type="radio"></li>
+                <li id="sort_y"><strong>세로정렬 : </strong>위<input type="radio"> 가운데<input type="radio"> 아래<input type="radio"></li>
+                <li id="print"><strong>출력 문자열 : </strong><input type="text" name="width">px</li>
+                <button id="btn" onclick="fnc1()">적용하기</button><br>
+</div>
+</form>
+<script>
+
+</script>
+
+</body>
+</html>

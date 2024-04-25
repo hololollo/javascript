@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전자계산기 꾸미기</title>
+    <style>
+        * {margin:0; padding: 0; }
+    .tit { padding-top: 2rem; text-align: center; padding-bottom: 0.5rem; }
+    #expression{width:400px; height:50px; margin-left:40px}
+    #calculator { width:500px; height:300px; border:1px solid #333; background: #FFFFFF;}
+    .btn_area input[type=button] {background-color:#999; border:1; outline:0; background-color:#666; width:20%; height:40px; 
+    line-height:36px; outline:0; border:0; border-radius: 5px; text-align: center; margin:5px; font-size:18px;
+    font-weight:bold; }
+    input:hover[type=button] {background-color: blue;}
+    input[type=button] { width:20%; height:40px; background-color: red; margin:5px; border-radius:5px;}
+    
+
+    </style>
+</head>
+<body>
+    <h1 class="tit">전자계산기</h1>
+    <hr>
+    <form id="calculator">
+        <input type="text" id="expression">
+        <hr>
+        <div class="btn_area">
+            <input type="button" value="7" onclick="compute('7')" />
+            <input type="button" value="8" onclick="compute('8')" />
+            <input type="button" value="9" onclick="compute('9')" />
+            <input type="button" value="AC" id="ac" class="clear_btn" />
+            <input type="button" value="4" onclick="compute('4')" />
+            <input type="button" value="5" onclick="compute('5')" />
+            <input type="button" value="6" onclick="compute('6')" />
+            <input type="button" value="/" onclick="compute('/')" class="blue_btn" />
+            <input type="button" value="1" onclick="compute('1')" />
+            <input type="button" value="2" onclick="compute('2')" />
+            <input type="button" value="3" onclick="compute('3')" />
+            <input type="button" value="*" onclick="compute('*')" class="blue_btn" />
+            <input type="button" value="." onclick="compute('.')" />
+            <input type="button" value="0" onclick="compute('0')" />
+            <input type="button" value="+" onclick="compute('+')" class="blue_btn" />
+            <input type="button" value="-" onclick="compute('-')" class="blue_btn" />
+        </div>
+        <input type="button" value="=" onclick="result()" id="equal" class="long_btn" />
+        <input type="button" value="OFF" onclick="off()" id="onoff" class="green_btn"/>
+    </form>
+    <script>
+        var ac = document.getElementById("ac");
+        var expression = document.getElementById("expression");
+        var display = document.getElementById("display");
+        function compute(ch) { // 문자열 결합
+            expression.value = expression.value + ch;
+        }
+        var ac = document.getElementById("ac");
+        ac.addEventListener("click", function() {
+            expression.value="";
+            display.innerHTML="";
+        });
+        function clear() { // 원래내용 초기화
+            expression.value="";
+            display.innerHTML+"";
+        }
+        var result = function(){ // 문자열을 계산식으로 변환
+            var data = eval(expression.value)
+            expression.innerHTML = data;
+        }
+        var onoff = document.getElementById("onoff");
+        var off = function(){ self.close();} // 현재창이 닫힘.
+            
+        
+
+
+    </script>
+</body>
+</html>
